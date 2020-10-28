@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { Header, Loading, MovieDetails, MovieList } from "./components";
+import {
+	Header,
+	Loading,
+	MovieDetails,
+	MovieList,
+	SearchBar
+} from "./components";
 import apiMovie from "./conf/api.movie";
 class App extends Component {
 	constructor(props) {
@@ -24,8 +30,8 @@ class App extends Component {
 				const movies = moviesApi.map(m => ({
 					img: "https://image.tmdb.org/t/p/w500" + m.poster_path,
 					title: m.title,
-					details: `${m.release_date} | ${m.vote_average}/10 | ${m.vote_count}`,
-					description: m.overwiew
+					details: `${m.release_date} | ${m.vote_average}/10  (${m.vote_count})`,
+					description: m.overview
 				}));
 				this.updateMovies(movies);
 			})
@@ -43,6 +49,7 @@ class App extends Component {
 		return (
 			<div className="App d-flex flex-column">
 				<Header />
+				<SearchBar updateMovies={this.updateMovies} />
 				{this.state.loaded ? (
 					<div className="d-flex flex-row flex-fill pt-4 p-2">
 						<MovieList
