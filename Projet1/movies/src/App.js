@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Header, Loading, MovieDetails, MovieList } from "./components";
 import dataMovies from "./data";
+import apiMovie from "./conf/api.movie";
 class App extends Component {
 	constructor(props) {
 		super(props);
@@ -21,6 +22,13 @@ class App extends Component {
 			selectedMovie: index
 		});
 	};
+
+	componentDidMount() {
+		apiMovie
+			.get("discover/movie")
+			.then(response => console.log(response))
+			.catch(err => console.log(err));
+	}
 	render() {
 		return (
 			<div className="App d-flex flex-column">
