@@ -10,7 +10,11 @@ export default props => {
 					<MovieList
 						movies={props.movies}
 						updateSelectedMovie={props.updateSelectedMovie}
+						favoris={props.favoris}
+						removeFavori={props.removeFavori}
+						addFavori={props.addFavori}
 					/>
+
 					<MovieDetails movie={props.movies[props.selectedMovie]} />
 				</div>
 			) : (
