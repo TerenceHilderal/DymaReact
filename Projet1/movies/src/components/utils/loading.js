@@ -6,10 +6,7 @@ export default () => {
 			style={{ minHeight: "100vh" }}
 			className="d-flex flex-row justify-content-center align-items-center w-100"
 		>
-			<img
-				alt="loading gif"
-				src="https://thumbs.gfycat.com/ResponsibleSoftAegeancat-size_restricted.gif"
-			/>
+			<img alt="loading gif" src="https://i.redd.it/ounq1mw5kdxy.gif" />
 		</div>
 	);
 };
