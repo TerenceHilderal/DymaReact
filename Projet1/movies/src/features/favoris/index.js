@@ -1,5 +1,5 @@
 import React from "react";
-import FavoriList from "../films/components/favori-list /FavoriList";
+import FavoriList from "./components/favori-list /FavoriList";
 
 export default props => {
 	return (

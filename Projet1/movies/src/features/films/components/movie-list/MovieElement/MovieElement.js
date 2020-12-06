@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Style from "./MovieElement.module.scss";
+
 const style = {
 	width: "480px",
 	height: "280px",
@@ -7,16 +7,18 @@ const style = {
 	margin: "0px 5px 10px 5px",
 	cursor: "pointer"
 };
+
 export default class MovieElement extends Component {
-	mouseEnter = () => {
+	onClick = () => {
 		this.props.updateSelectedMovie(this.props.movie.title);
 	};
 
 	render() {
 		return (
 			<div
-				onClick={this.mouseEnter}
-				className={"d-flex flex-row bg-light " + Style.container}
+				onClick={this.onClick}
+				className={"d-flex flex-row bg-light"}
+				style={style}
 			>
 				<img alt="film" width="185" src={this.props.movie.img} />
 				<div className="flex-fill d-flex flex-column p-3">
